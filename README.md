@@ -1,7 +1,7 @@
 exa
 ===
 
-Adds aliases for [exa]. Also change default blue colors to blue bold (file's
+Adds aliases for [eza] or [exa]. Also change default blue colors to blue bold (file's
 date, modified flag in Git).
 
 Aliases
@@ -22,5 +22,6 @@ Requirements
 This module must be sourced *after* the [utility] module, so this module can
 override the aliases set by that one.
 
+[eza]: https://github.com/eza-community/eza
 [exa]: https://the.exa.website
 [utility]: https://github.com/zimfw/utility
