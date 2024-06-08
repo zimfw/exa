@@ -1,15 +1,21 @@
 # Ensure exa is available
 if (( ${+commands[eza]} )); then
-  alias ls='eza --group-directories-first'
-elif (( ${+commands[exa]} )); then
-  alias ls='exa --group-directories-first'
-else
+  exa() { eza "$@"; }
+elif (( ! ${+commands[exa]} )); then
   return 1
 fi
 
 export EXA_COLORS='da=1;34:gm=1;34'
 
-alias ll='ls -l --git'        # Long format, git status
+alias ls='exa --group-directories-first'
+
+# check if --git is supported
+if exa --git /dev/null &> /dev/null; then
+  alias ll='ls -l --git'      # Long format, git status
+else
+  alias ll='ls -l'            # Long format
+fi
+
 alias l='ll -a'               # Long format, all files
 alias lr='ll -T'              # Long format, recursive as a tree
 alias lx='ll -sextension'     # Long format, sort by extension
