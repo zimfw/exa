@@ -9,7 +9,12 @@ fi
 
 export EXA_COLORS='da=1;34:gm=1;34'
 
-alias ll='ls -l --git'        # Long format, git status
+if ls --git /dev/null &>/dev/null; then
+  alias ll='ls -l --git'      # Long format, git status
+else
+  alias ll='ls -l'            # Long format
+fi
+
 alias l='ll -a'               # Long format, all files
 alias lr='ll -T'              # Long format, recursive as a tree
 alias lx='ll -sextension'     # Long format, sort by extension
