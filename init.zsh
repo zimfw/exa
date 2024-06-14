@@ -1,8 +1,10 @@
 # Ensure eza is available
-if (( ${+commands[exa]} )); then
-  eza() { exa "$@" }
-elif (( ! ${+commands[eza]} )); then
-  return 1
+if (( ! ${+commands[eza]} )); then
+  if (( ${+commands[exa]} )); then
+    eza() { exa "$@" }
+  else
+    return 1
+  fi
 fi
 
 export EXA_COLORS='da=1;34:gm=1;34'
