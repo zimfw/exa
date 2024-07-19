@@ -1,13 +1,14 @@
 # Ensure eza is available
 if (( ! ${+commands[eza]} )); then
   if (( ${+commands[exa]} )); then
+    export EXA_COLORS='da=1;34:gm=1;34'
     eza() { exa "$@" }
   else
     return 1
   fi
 fi
 
-export EXA_COLORS='da=1;34:gm=1;34'
+export EZA_COLORS='da=1;34:gm=1;34:Su=1;34'
 
 alias ls='eza --group-directories-first'
 
