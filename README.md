@@ -16,6 +16,18 @@ Aliases
   * `lt` lists sorted by newest modification time last.
   * `lc` lists sorted by newest status change (ctime) last.
 
+Advanced settings
+-----------------
+
+By default, this module will define the following ls alias:
+
+    alias ls='eza --group-directories-first'
+
+You can override the default alias by defining one with your preferred options
+in your `~/.zshrc` after the module is initialized. Example:
+
+    alias ls='eza --group-directories-first --icons'
+
 Requirements
 ------------
 
