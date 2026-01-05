@@ -1,8 +1,8 @@
 exa
 ===
 
-Adds aliases for [eza] or [exa]. Also change default blue colors to blue bold (file's
-date, modified flag in Git).
+Adds aliases for [eza] or the unmaintained [exa]. Also change default blue
+colors to blue bold (file's date, modified flag in Git).
 
 Aliases
 -------
@@ -19,12 +19,13 @@ Aliases
 Advanced settings
 -----------------
 
-By default, this module will define the following ls alias:
+By default, this module will define the following `ls` alias:
 
     alias ls='eza --group-directories-first'
 
 You can override the default alias by defining one with your preferred options
-in your `~/.zshrc` after the module is initialized. Example:
+at the end of your `~/.zshrc`, after the modules are initialized with
+`source ${ZIM_HOME}/init.zsh`. Example:
 
     alias ls='eza --group-directories-first --icons'
 
@@ -35,5 +36,5 @@ This module must be sourced *after* the [utility] module, so this module can
 override the aliases set by that one.
 
 [eza]: https://github.com/eza-community/eza
-[exa]: https://the.exa.website
+[exa]: https://github.com/ogham/exa
 [utility]: https://github.com/zimfw/utility
