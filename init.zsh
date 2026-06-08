@@ -8,7 +8,7 @@ if (( ! ${+commands[eza]} )); then
   fi
 fi
 
-export EZA_COLORS='da=1;34:gm=1;34:Su=1;34'
+export EZA_COLORS="${EZA_COLORS:-da=1;34:gm=1;34:Su=1;34}"
 
 alias ls='eza --group-directories-first'
 
