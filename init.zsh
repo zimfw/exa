@@ -8,9 +8,11 @@ if (( ! ${+commands[eza]} )); then
   fi
 fi
 
+export EZA_ICONS="true"
 export EZA_COLORS="${EZA_COLORS:-da=1;34:gm=1;34:Su=1;34}"
 
-alias ls='eza --group-directories-first'
+# Ensure expansion of globs by passing trailing `--`
+alias ls='eza --group-directories-first --'
 
 if eza --git /dev/null &>/dev/null; then
   alias ll='ls -l --git'      # Long format, git status
