@@ -2,7 +2,7 @@
 if (( ! ${+commands[eza]} )); then
   if (( ${+commands[exa]} )); then
     export EXA_COLORS='da=1;34:gm=1;34'
-    eza() { exa "$@" }
+    eza() { exa "${@}" }
   else
     return 1
   fi
